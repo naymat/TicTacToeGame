@@ -5,7 +5,7 @@ import Row from "../components/row";
 class Board extends Component {
   state = { visable: false };
   boardClasses() {
-    let classes = "board ";
+    let classes = "board noselect ";
     if (!this.state.visable) classes += "hide";
 
     return classes;

@@ -8,17 +8,26 @@ class Menu extends Component {
     /*visable before game starts */
     visable: true
   };
+  constructor() {
+    super();
+    this.handleStartButton = this.handleStartButton.bind(this);
+  }
   menuClasses() {
     let classes = "menu ";
-    if (!this.state.visable) classes += "hide";
-
+    if (!this.state.visable) classes += "animated fadeOut";
     return classes;
   }
+  handleStartButton() {
+    this.setState({ visable: false });
+  }
+
   render() {
     return (
       <div className={this.menuClasses()}>
         <InputSession />
-        <StartButton />
+        <button className="start button" onClick={this.handleStartButton}>
+          New Game
+        </button>
       </div>
     );
   }
