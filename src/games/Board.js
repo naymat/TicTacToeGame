@@ -3,6 +3,7 @@ class Board {
     this.boardLength = 3;
     this.boardWidth = 3;
     this.boardArray = [];
+    this.createBoard();
   }
   /**Creates n*m board based on the boardWidth and boardLength properties */
   createBoard() {
@@ -15,14 +16,18 @@ class Board {
     }
   }
   /*Update Board with new mark*/
-  updateBoard(coordinate, mark) {
-    if (isUnchanged(position)) {
-      console.log("position is unchanged");
+  updateBoard(x, y, mark) {
+    if (this.isUnchanged(x, y)) {
+      this.boardArray[x][y] = mark;
     }
   }
-  isUnchanged(coordinate) {
-    if (this.boardArray[coordinate.x][coordinate.y] === "") return true;
+  isUnchanged(x, y) {
+    if (this.getCell(x, y) === "") return true;
     else return false;
   }
+  getCell(x, y) {
+    return this.boardArray[x][y];
+  }
 }
+
 module.exports = Board;
