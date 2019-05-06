@@ -15,13 +15,16 @@ class Board {
       this.boardArray.push(row);
     }
   }
+  updateBoard(coordinate, mark) {
+    updateBoard(coordinate.x, coordinate.y, mark);
+  }
   /*Update Board with new mark*/
   updateBoard(x, y, mark) {
-    if (this.isUnchanged(x, y)) {
+    if (this.isEmptyCell(x, y)) {
       this.boardArray[x][y] = mark;
     }
   }
-  isUnchanged(x, y) {
+  isEmptyCell(x, y) {
     if (this.getCell(x, y) === "") return true;
     else return false;
   }
