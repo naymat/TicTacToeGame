@@ -18,10 +18,17 @@ class Board {
   updateBoard(coordinate, mark) {
     this.updateBoard(coordinate.x, coordinate.y, mark);
   }
-  /*Update Board with new mark*/
+  /*Update Board with new mark
+  UpdateBoard(x,y) => {x = 0, y = 2} (updated value indicated by U)
+  ---------
+  | x     |
+  | U x o |
+  |       |
+  ---------
+  */
   updateBoard(x, y, mark) {
-    if (this.isEmptyCell(x, y)) {
-      this.boardArray[x][y] = mark;
+    if (this.isEmptyCell(y, x)) {
+      this.boardArray[y][x] = mark;
     }
   }
   isEmptyCell(x, y) {
@@ -29,7 +36,8 @@ class Board {
     else return false;
   }
   getCell(x, y) {
-    return this.boardArray[x][y];
+    //[y][x] instead of [x][y] because we want x to be horizintal value and y to be veritical in logical representation
+    return this.boardArray[y][x];
   }
 }
 

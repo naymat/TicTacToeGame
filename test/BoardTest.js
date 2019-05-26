@@ -32,7 +32,39 @@ describe("Board", function() {
   });
   it("Get non empty cell from board", function() {
     board = new Board();
-    board.boardArray = [["", "X", ""], ["O", "X", ""], ["X", "", "O"]];
-    assert.equal(board.getCell(0, 1), "X");
+    const boardArr = (board.boardArray = [
+      ["", "X", ""],
+      ["O", "X", ""],
+      ["X", "", "O"]
+    ]);
+    assert.equal(board.getCell(0, 1), "O");
+  });
+  it("Get origin", function() {
+    board = new Board();
+    const boardArr = (board.boardArray = [
+      ["", "X", ""],
+      ["O", "X", ""],
+      ["X", "", "O"]
+    ]);
+    assert.equal(board.getCell(0, 0), "");
+  });
+  it("Get x:1 , y :0", function() {
+    board = new Board();
+    debugger;
+    const boardArr = (board.boardArray = [
+      ["", "X", ""],
+      ["O", "X", ""],
+      ["X", "", "O"]
+    ]);
+    assert.equal(board.getCell(1, 0), "X");
+  });
+  it("Get middle point", function() {
+    board = new Board();
+    const boardArr = (board.boardArray = [
+      ["", "X", ""],
+      ["O", "X", ""],
+      ["X", "", "O"]
+    ]);
+    assert.equal(board.getCell(1, 1), "X");
   });
 });
