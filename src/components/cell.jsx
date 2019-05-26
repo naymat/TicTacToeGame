@@ -16,7 +16,7 @@ class Cell extends Component {
   render() {
     return (
       <div onClick={this.cellSelected} className="cell">
-        {this.state.mark}
+        {this.props.value}
       </div>
     );
   }

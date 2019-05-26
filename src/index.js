@@ -7,12 +7,11 @@ import * as serviceWorker from "./serviceWorker";
 import GameBoard from "./components/board";
 import Menu from "./components/menue";
 import Board from "./games/Board";
-// const Board = require("./games/Board");
 
 let board = new Board();
 ReactDOM.render(
   <div className="main">
-    <Menu />
+    {/* <Menu /> */}
     <GameBoard board={board} />
   </div>,
   document.getElementById("root")

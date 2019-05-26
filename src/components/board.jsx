@@ -12,13 +12,13 @@ class GameBoard extends Component {
   }
   render() {
     const board = this.props.board;
-    board.updateBoard(0, 0, "N");
+    board.updateBoard(0, 2, "X");
     console.log(board.boardArray);
     return (
       <div className={this.boardClasses()}>
-        <Row />
-        <Row />
-        <Row />
+        {board.boardArray.map(row => (
+          <Row row={row} />
+        ))}
       </div>
     );
   }

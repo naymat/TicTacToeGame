@@ -8,9 +8,9 @@ class Row extends Component {
   render() {
     return (
       <div className="row">
-        <Cell />
-        <Cell />
-        <Cell />
+        {this.props.row.map(value => {
+          return <Cell value={value} />;
+        })}
       </div>
     );
   }
